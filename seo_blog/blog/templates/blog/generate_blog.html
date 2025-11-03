@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SEO Blog Generator</title>
+</head>
+<body>
+    <h1>Generate SEO Optimized Blog</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Generate</button>
+    </form>
+
+    {% if blog_content %}
+        <hr>
+        <h2>Generated Blog:</h2>
+        <div style="white-space: pre-wrap;">{{ blog_content }}</div>
+    {% endif %}
+</body>
+</html>
